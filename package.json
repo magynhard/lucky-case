@@ -1,0 +1,53 @@
+{
+  "name": "lucky-case",
+  "version": "1.0.3",
+  "description": "The lucky javascript library to identify and convert strings from any letter case to another",
+  "exports": {
+    ".": "./src/lucky-case/index.js",
+    "./": "./src/lucky-case/"
+  },
+  "main": "src/lucky-case/lucky-case.js",
+  "scripts": {
+    "test": "jasmine",
+    "build": "node scripts/build.js",
+    "doc": "node scripts/doc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magynhard/lucky-case.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "chalk": "^4.1.0",
+    "jasmine": "^3.6.3",
+    "jsdoc": "^3.6.6",
+    "uglify-js": "^3.12.1"
+  },
+  "keywords": [
+    "javascript",
+    "string",
+    "letter",
+    "case",
+    "transformation",
+    "conversion",
+    "snake",
+    "case",
+    "camel",
+    "dash",
+    "upper",
+    "lower",
+    "train",
+    "pascal",
+    "word",
+    "capital",
+    "sentence"
+  ],
+  "author": "Matthäus J. N. Beyrle <lucky-case.npm@mail.magynhard.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magynhard/lucky-case/issues"
+  },
+  "homepage": "https://github.com/magynhard/lucky-case#readme"
+}
