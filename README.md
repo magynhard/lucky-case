@@ -86,9 +86,9 @@ LuckyCase.isValidCaseString('1nV4lid$tring')            // => false
 
 ### Approach 2: Monkey patch the string class
 
-With monkey patching you can access the same methods (except deconstantize, isValidCaseType) of LuckyCase directly from strings.
+With monkey patching you can access the same methods (except `deconstantize`, `isValidCaseType`) of LuckyCase directly from strings.
 
-Because the method 'case' and 'cases' are so general and could lead to conflicts, they are called 'letterCase' and 'letterCases' at strings.
+Because the methods `case` and `cases` are so general and could lead to conflicts, they are called `letterCase` and `letterCases` at strings.
 
 ```javascript
 // node js
@@ -132,14 +132,14 @@ npm install lucky-case
 
 ### Option 3: Browser
 
-Download the luck-case.min.js or lucky-case.string.min.js (string monkey patching) from the folder `dist`
+Download the `luck-case.min.js` or `lucky-case.string.min.js` (string monkey patching version) from the folder `dist` and
 put it in an appropriate folder, e.g. `js/lib`
 and reference it with an script tag in your project:
 ```html
 <script type="text/javascript" src="js/lib/lucky-case.min.js"></script>
 ```
 
-Optionally you can add the source file to your build pipeline, if you are using webpack, brunch or any other packager.
+Optionally you then should add the source file to your build pipeline, if you are using webpack, brunch or any other packager.
 
   
 <a name="documentation"></a>    
