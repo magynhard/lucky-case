@@ -19,7 +19,7 @@ Convert and detect various letter cases in strings
     * [.isSnakeCase(string, allow_prefixed_underscores)](#LuckyCase.isSnakeCase) &rarr; <code>boolean</code>
     * [.toUpperSnakeCase(string, preserve_prefixed_underscores)](#LuckyCase.toUpperSnakeCase) &rarr; <code>string</code>
     * [.isUpperSnakeCase(string, allow_prefixed_underscores)](#LuckyCase.isUpperSnakeCase) &rarr; <code>boolean</code>
-    * [.toPascalCase(string, preserve_prefixed_underscores)](#LuckyCase.toPascalCase) &rarr; <code>string</code> \| <code>\*</code>
+    * [.toPascalCase(string, preserve_prefixed_underscores)](#LuckyCase.toPascalCase) &rarr; <code>string</code>
     * [.isPascalCase(string, allow_prefixed_underscores)](#LuckyCase.isPascalCase) &rarr; <code>boolean</code>
     * [.toCamelCase(string, preserve_prefixed_underscores)](#LuckyCase.toCamelCase) &rarr; <code>string</code>
     * [.isCamelCase(string, allow_prefixed_underscores)](#LuckyCase.isCamelCase) &rarr; <code>boolean</code>
@@ -211,7 +211,7 @@ Check if the string is upper snake case
 
 <a name="LuckyCase.toPascalCase"></a>
 
-### LuckyCase.toPascalCase(string, preserve_prefixed_underscores) &rarr; <code>string</code> \| <code>\*</code>
+### LuckyCase.toPascalCase(string, preserve_prefixed_underscores) &rarr; <code>string</code>
 Convert the given string from any case
 into pascal case
 

@@ -3,8 +3,8 @@
  *
  * The lucky javascript library to identify and convert strings from any letter case to another
  *
- * @version 1.0.6
- * @date 2020-12-12T20:57:30.427Z
+ * @version 1.0.7
+ * @date 2020-12-12T21:01:59.286Z
  * @link https://github.com/magynhard/lucky-case
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -287,7 +287,7 @@ class LuckyCase {
      *
      * @param string to convert
      * @param preserve_prefixed_underscores
-     * @returns {string|*}
+     * @returns {string}
      */
     static toPascalCase(string, preserve_prefixed_underscores = true) {
         const self = LuckyCase;

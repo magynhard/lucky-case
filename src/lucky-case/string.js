@@ -180,7 +180,7 @@ if(typeof require === 'function') {
          *      'this-isAnExample_string' => 'ThisIsAnExampleString'
          *
          * @param preserve_prefixed_underscores
-         * @returns {string|*}
+         * @returns {string}
          */
         toPascalCase(preserve_prefixed_underscores = true) {
             return LuckyCase.toPascalCase(this, preserve_prefixed_underscores);
@@ -702,7 +702,7 @@ Object.assign(String.prototype, {
      *      'this-isAnExample_string' => 'ThisIsAnExampleString'
      *
      * @param preserve_prefixed_underscores
-     * @returns {string|*}
+     * @returns {string}
      */
     toPascalCase(preserve_prefixed_underscores = true) {
         return LuckyCase.toPascalCase(this, preserve_prefixed_underscores);

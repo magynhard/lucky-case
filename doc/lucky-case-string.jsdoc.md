@@ -16,7 +16,7 @@ LuckyCase version to add methods directly to string by monkey patching
     * [.isSnakeCase(allow_prefixed_underscores)](#String+isSnakeCase) &rarr; <code>boolean</code>
     * [.toUpperSnakeCase(preserve_prefixed_underscores)](#String+toUpperSnakeCase) &rarr; <code>string</code>
     * [.isUpperSnakeCase(allow_prefixed_underscores)](#String+isUpperSnakeCase) &rarr; <code>boolean</code>
-    * [.toPascalCase(preserve_prefixed_underscores)](#String+toPascalCase) &rarr; <code>string</code> \| <code>\*</code>
+    * [.toPascalCase(preserve_prefixed_underscores)](#String+toPascalCase) &rarr; <code>string</code>
     * [.isPascalCase(allow_prefixed_underscores)](#String+isPascalCase) &rarr; <code>boolean</code>
     * [.toCamelCase(preserve_prefixed_underscores)](#String+toCamelCase) &rarr; <code>string</code>
     * [.isCamelCase(allow_prefixed_underscores)](#String+isCamelCase) &rarr; <code>boolean</code>
@@ -162,7 +162,7 @@ Check if the string is upper snake case
 
 <a name="String+toPascalCase"></a>
 
-### string.toPascalCase(preserve_prefixed_underscores) &rarr; <code>string</code> \| <code>\*</code>
+### string.toPascalCase(preserve_prefixed_underscores) &rarr; <code>string</code>
 Convert the string from any case
 into pascal case
 

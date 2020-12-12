@@ -281,7 +281,7 @@ class LuckyCase {
      *
      * @param string to convert
      * @param preserve_prefixed_underscores
-     * @returns {string|*}
+     * @returns {string}
      */
     static toPascalCase(string, preserve_prefixed_underscores = true) {
         const self = LuckyCase;
