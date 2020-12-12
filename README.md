@@ -144,8 +144,9 @@ Optionally you then should add the source file to your build pipeline, if you ar
   
 <a name="documentation"></a>    
 ## Documentation
-Check out the jsdoc at our github page
-<a href="http://magynhard.github.io/lucky-case">http://magynhard.github.io/lucky-case</a>
+Check out the *jsdoc* documentations:
+* [LuckyCase static class version](doc/lucky-case.jsdoc.md)
+* [LuckyCase string monkey patching version](doc/lucky-case-string.jsdoc.md)
 
 
 
