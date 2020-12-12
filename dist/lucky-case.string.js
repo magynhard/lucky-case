@@ -3,8 +3,8 @@
  *
  * The lucky javascript library to identify and convert strings from any letter case to another
  *
- * @version 1.0.4
- * @date 2020-12-07T06:16:09.461Z
+ * @version 1.0.6
+ * @date 2020-12-12T20:57:30.432Z
  * @link https://github.com/magynhard/lucky-case
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
