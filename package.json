@@ -1,6 +1,6 @@
 {
   "name": "lucky-case",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The lucky javascript library to identify and convert strings from any letter case to another",
   "exports": {
     ".": "./src/lucky-case/lucky-case.js",
@@ -10,6 +10,7 @@
   "scripts": {
     "test": "jasmine",
     "build": "node scripts/build.js",
+    "publish": "npm publish",
     "doc": "node scripts/doc.js"
   },
   "repository": {

@@ -146,7 +146,7 @@ Optionally you then should add the source file to your build pipeline, if you ar
 ## Documentation
 Check out the *jsdoc* documentations:
 * [LuckyCase static class version](doc/lucky-case.jsdoc.md)
-* [LuckyCase string monkey patching version](doc/lucky-case-string.jsdoc.md)
+* [LuckyCase string monkey patched version](doc/lucky-case-string.jsdoc.md)
 
 
 
