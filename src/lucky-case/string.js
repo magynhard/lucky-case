@@ -221,7 +221,7 @@ if(typeof require === 'function') {
          * @returns {boolean}
          */
         isCamelCase(allow_prefixed_underscores = true) {
-            LuckyCase.isCamelCase(this, allow_prefixed_underscores);
+            return LuckyCase.isCamelCase(this, allow_prefixed_underscores);
         }
 
         //----------------------------------------------------------------------------------------------------
@@ -429,7 +429,7 @@ if(typeof require === 'function') {
          * @returns {string}
          */
         capitalize(skip_prefixed_underscores = false) {
-            LuckyCase.capitalize(this, skip_prefixed_underscores);
+            return LuckyCase.capitalize(this, skip_prefixed_underscores);
         }
 
         /**
@@ -745,7 +745,7 @@ Object.assign(String.prototype, {
      * @returns {boolean}
      */
     isCamelCase(allow_prefixed_underscores = true) {
-        LuckyCase.isCamelCase(this, allow_prefixed_underscores);
+        return LuckyCase.isCamelCase(this, allow_prefixed_underscores);
     }
 });
 
@@ -789,7 +789,7 @@ Object.assign(String.prototype, {
      * @returns {string}
      */
     toUpperDashCase(preserve_prefixed_underscores = true) {
-        return LuckyCase.toUpperDashCase(preserve_prefixed_underscores);
+        return LuckyCase.toUpperDashCase(this, preserve_prefixed_underscores);
     }
 });
 
@@ -965,7 +965,7 @@ Object.assign(String.prototype, {
      * @returns {string}
      */
     capitalize(skip_prefixed_underscores = false) {
-        LuckyCase.capitalize(this, skip_prefixed_underscores);
+        return LuckyCase.capitalize(this, skip_prefixed_underscores);
     }
 });
 
