@@ -132,7 +132,7 @@ npm install lucky-case
 
 ### Option 3: Browser
 
-Download the `luck-case.min.js` or `lucky-case.string.min.js` (string monkey patching version) from the folder `dist` and
+Download the `lucky-case.min.js` or `lucky-case.string.min.js` (string monkey patching version) from the folder `dist` and
 put it in an appropriate folder, e.g. `js/lib`
 and reference it with an script tag in your project:
 ```html
