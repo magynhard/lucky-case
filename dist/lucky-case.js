@@ -3,8 +3,8 @@
  *
  * The lucky javascript library to identify and convert strings from any letter case to another
  *
- * @version 1.1.0
- * @date 2020-12-13T12:50:32.957Z
+ * @version 1.1.1
+ * @date 2021-01-10T19:15:32.684Z
  * @link https://github.com/magynhard/lucky-case
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle
@@ -93,12 +93,13 @@ class LuckyCase {
      * Convert a string into the given case type
      *
      * @param {string} string to convert
-     * @param {string} case_type
+     * @param {string} case_type can be UPPER_CASE or lower_case, e.g. 'SNAKE_CASE' or 'snake_case'
      * @param {boolean} preserve_prefixed_underscores
      * @returns {string}
      */
     static convertCase(string, case_type, preserve_prefixed_underscores = true) {
         const self = LuckyCase;
+        case_type = self.toUpperCase(case_type);
         if (Object.keys(self.CASES).includes(case_type)) {
             return self['to' + self.toPascalCase(case_type)](string, preserve_prefixed_underscores);
         }
@@ -710,7 +711,7 @@ class LuckyCase {
         } else {
             s = string;
         }
-        return self._isCaseMatch(s, self.CAPITAL);
+        return self.isUpperCase(s[0]);
     }
 
     /**
@@ -722,7 +723,57 @@ class LuckyCase {
      */
     static isCapitalized(string, skip_prefixed_underscores = false) {
         const self = LuckyCase;
-        return self.isCamelCase(string, skip_prefixed_underscores);
+        return self.isCapital(string, skip_prefixed_underscores);
+    }
+
+    /**
+     * Convert the first character to lower case
+     *
+     * @param {string} string to convert
+     * @param {boolean} skip_prefixed_underscores
+     * @returns {string}
+     */
+    static decapitalize(string, skip_prefixed_underscores = false) {
+        const self = LuckyCase;
+        if(!string || string === '') {
+            return string;
+        }
+        let s;
+        if(skip_prefixed_underscores) {
+            s = self.cutUnderscoresAtStart(string);
+        } else {
+            s = string;
+        }
+        s = self.toLowerCase(s[0]) + s.substr(1);
+        if(skip_prefixed_underscores) {
+            return self.getUnderscoresAtStart(string) + s;
+        } else {
+            return s;
+        }
+    }
+
+    /**
+     * Check if the strings first character is a lower case letter
+     *
+     * @param {string} string
+     * @param {boolean} skip_prefixed_underscores
+     * @returns {boolean}
+     */
+    static isNotCapital(string, skip_prefixed_underscores = false) {
+        const self = LuckyCase;
+        return !self.isCapital(string, skip_prefixed_underscores);
+    }
+
+    /**
+     * Check if the strings first character is a lower case letter
+     *
+     * @param {string} string
+     * @param {boolean} skip_prefixed_underscores
+     * @returns {boolean}
+     */
+    static isDecapitalized(string, skip_prefixed_underscores = false) {
+        const self = LuckyCase;
+        return self.isNotCapital(string, skip_prefixed_underscores);
     }
 
     //----------------------------------------------------------------------------------------------------
@@ -947,9 +998,18 @@ class LuckyCase {
      */
     static _isCaseMatch(string, case_type) {
         const self = LuckyCase;
-        const regex = self.CASES[case_type];
-        regex.lastIndex = 0; // reset state
-        return self.CASES[case_type].test(string);
+        if(self.isValidCaseType(case_type)) {
+            const regex = self.CASES[case_type];
+            regex.lastIndex = 0; // reset state
+            return self.CASES[case_type].test(string);
+        } else if(self.FORMATS[case_type]) {
+            const regex = self.FORMATS[case_type];
+            regex.lastIndex = 0;
+            return self.FORMATS[case_type].test(string);
+        } else {
+            const error_message = `Invalid case type '${case_type}'. Valid types are: ${Object.keys(self.CASES).join(', ')}`;
+            throw new InvalidCaseError(error_message);
+        }
     }
 
     /**
