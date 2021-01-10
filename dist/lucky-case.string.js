@@ -4,7 +4,7 @@
  * The lucky javascript library to identify and convert strings from any letter case to another
  *
  * @version 1.1.1
- * @date 2021-01-10T19:15:32.690Z
+ * @date 2021-01-10T23:06:48.805Z
  * @link https://github.com/magynhard/lucky-case
  * @author Matthäus J. N. Beyrle
  * @copyright Matthäus J. N. Beyrle

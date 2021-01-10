@@ -90,7 +90,7 @@ for(let build_key of Object.keys(builds)) {
         fs.writeFileSync(build.destination_file, releaseTemplate() + final_file);
     })();
     (async function createMinifiedBuilds() {
-        const babel_command = `babel ${build.destination_min_file} --no-comments --out-file ${build.destination_min_file}`;
+        const babel_command = `babel ${build.destination_file} --no-comments --out-file ${build.destination_min_file}`;
         const uglify_command = `uglifyjs ${build.destination_min_file} -m -c -o ${build.destination_min_file}`;
         await exec_prom(babel_command + ' && ' + uglify_command).then(() => {
             prependToFile(build.destination_min_file, releaseTemplate());
