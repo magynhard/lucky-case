@@ -47,7 +47,7 @@ if(typeof require === 'function') {
         /**
          * Convert a string into the given case type
          *
-         * @param {string} case_type
+         * @param {string} case_type can be UPPER_CASE or lower_case, e.g. 'SNAKE_CASE' or 'snake_case'
          * @param {boolean} preserve_prefixed_underscores
          * @returns {string}
          */
@@ -452,6 +452,36 @@ if(typeof require === 'function') {
             return LuckyCase.isCapitalized(this, skip_prefixed_underscores);
         }
 
+        /**
+         * Convert the first character to lower case
+         *
+         * @param {boolean} skip_prefixed_underscores
+         * @returns {string}
+         */
+        decapitalize(skip_prefixed_underscores = false) {
+            return LuckyCase.decapitalize(this, skip_prefixed_underscores);
+        }
+
+        /**
+         * Check if the strings first character is a lower letter
+         *
+         * @param {boolean} skip_prefixed_underscores
+         * @returns {boolean}
+         */
+        isNotCapital(skip_prefixed_underscores = false) {
+            return LuckyCase.isNotCapital(this, skip_prefixed_underscores);
+        }
+
+        /**
+         * Check if the strings first character is a lower letter
+         *
+         * @param {boolean} skip_prefixed_underscores
+         * @returns {boolean}
+         */
+        isDecapitalized(skip_prefixed_underscores = false) {
+            return LuckyCase.isDecapitalized(this, skip_prefixed_underscores);
+        }
+
         //----------------------------------------------------------------------------------------------------
         // MIXED CASE
         //----------------------------------------------------------------------------------------------------
@@ -565,7 +595,7 @@ Object.assign(String.prototype, {
     /**
      * Convert a string into the given case type
      *
-     * @param {string} case_type
+     * @param {string} case_type can be UPPER_CASE or lower_case, e.g. 'SNAKE_CASE' or 'snake_case'
      * @param {boolean} preserve_prefixed_underscores
      * @returns {string}
      */
@@ -990,6 +1020,47 @@ Object.assign(String.prototype, {
      */
     isCapitalized(skip_prefixed_underscores = false) {
         return LuckyCase.isCapitalized(this, skip_prefixed_underscores);
+    }
+});
+
+Object.assign(String.prototype, {
+
+
+    /**
+     * Convert the first character to lower case
+     *
+     * @param {boolean} skip_prefixed_underscores
+     * @returns {string}
+     */
+    decapitalize(skip_prefixed_underscores = false) {
+        return LuckyCase.decapitalize(this, skip_prefixed_underscores);
+    }
+});
+
+Object.assign(String.prototype, {
+
+
+    /**
+     * Check if the strings first character is a lower letter
+     *
+     * @param {boolean} skip_prefixed_underscores
+     * @returns {boolean}
+     */
+    isNotCapital(skip_prefixed_underscores = false) {
+        return LuckyCase.isNotCapital(this, skip_prefixed_underscores);
+    }
+});
+
+Object.assign(String.prototype, {
+
+    /**
+     * Check if the strings first character is a lower letter
+     *
+     * @param {boolean} skip_prefixed_underscores
+     * @returns {boolean}
+     */
+    isDecapitalized(skip_prefixed_underscores = false) {
+        return LuckyCase.isDecapitalized(this, skip_prefixed_underscores);
     }
 });
 

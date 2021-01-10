@@ -493,6 +493,7 @@ describe('LuckyCase', function () {
                 const result = LuckyCase.toSnakeCase(source);
                 expect(result).toEqual(expected_result);
                 expect(result).toEqual(LuckyCase.convertCase(source, LuckyCase.SNAKE_CASE));
+                expect(result).toEqual(LuckyCase.convertCase(source, 'snake_case'));
             }
         });
         it('into snake case with preserving underscores', function () {
@@ -576,6 +577,7 @@ describe('LuckyCase', function () {
                 const result = LuckyCase.toUpperSnakeCase(source);
                 expect(result).toEqual(expected_result);
                 expect(result).toEqual(LuckyCase.convertCase(source, LuckyCase.UPPER_SNAKE_CASE));
+                expect(result).toEqual(LuckyCase.convertCase(source, 'upper_snake_case'));
             }
         });
         it('into upper snake case without preserving underscores', function () {
@@ -682,6 +684,7 @@ describe('LuckyCase', function () {
                 const result = LuckyCase.toCamelCase(source);
                 expect(result).toEqual(expected_result);
                 expect(result).toEqual(LuckyCase.convertCase(source, LuckyCase.CAMEL_CASE));
+                expect(result).toEqual(LuckyCase.convertCase(source, 'camel_case'));
             }
         });
         it('into camel case with preserving underscores', function () {
@@ -1490,6 +1493,106 @@ describe('LuckyCase.isValidCaseString', function () {
         });
         it("does not recognize invalid case string ')(§/$=)?'", function () {
             expect(LuckyCase.isValidCaseString(')(§/$=)?')).toEqual(false);
+        });
+    });
+});
+
+//----------------------------------------------------------------------------------------------------
+
+describe('LuckyCase', function () {
+    beforeEach(function () {
+    });
+    describe('capitalize / decapitalize related functions', function () {
+        it(".isCapital valid examples", function () {
+            const valid_samples = [
+                'Capital',
+                'CAPITAL',
+                'Ca-PItal',
+                'Ca_pi_tal',
+                'Ca pi-tal',
+                '_Capital',
+                '____Capital',
+            ]
+            for(let sample of valid_samples) {
+                expect(LuckyCase.isCapital(sample, true)).toEqual(true);
+                expect(LuckyCase.isCapitalized(sample, true)).toEqual(true);
+            }
+        });
+        it(".isCapital invalid examples", function () {
+            const valid_samples = [
+                'capital',
+                'cAPITAL',
+                'ca-PItal',
+                'ca_pi_tal',
+                'ca pi-tal',
+                '_capital',
+                '____capital',
+            ]
+            for(let sample of valid_samples) {
+                expect(LuckyCase.isCapital(sample, true)).toEqual(false);
+                expect(LuckyCase.isCapitalized(sample, true)).toEqual(false);
+            }
+        });
+        it(".decapitalize examples with skipping prefixed underscores", function () {
+            const conversion_examples = {
+                'Capital': 'capital',
+                'CAPITAL': 'cAPITAL',
+                'Ca-PItal': 'ca-PItal',
+                'Ca_pi_tal': 'ca_pi_tal',
+                'Ca pi-tal': 'ca pi-tal',
+                '_Capital': '_capital',
+                '____Capital': '____capital'
+            }
+            for(let source of Object.keys(conversion_examples)) {
+                const expected_result = conversion_examples[source];
+                expect(LuckyCase.decapitalize(source, true)).toEqual(expected_result);
+            }
+        });
+        it(".decapitalize examples without skipping prefixed underscores", function () {
+            const conversion_examples = {
+                'Capital': 'capital',
+                'CAPITAL': 'cAPITAL',
+                'Ca-PItal': 'ca-PItal',
+                'Ca_pi_tal': 'ca_pi_tal',
+                'Ca pi-tal': 'ca pi-tal',
+                '_Capital': '_Capital',
+                '____Capital': '____Capital'
+            }
+            for(let source of Object.keys(conversion_examples)) {
+                const expected_result = conversion_examples[source];
+                expect(LuckyCase.decapitalize(source, false)).toEqual(expected_result);
+            }
+        });
+
+        it(".isDecapitalized valid examples", function () {
+            const valid_samples = [
+                'Capital',
+                'CAPITAL',
+                'Ca-PItal',
+                'Ca_pi_tal',
+                'Ca pi-tal',
+                '_Capital',
+                '____Capital',
+            ]
+            for(let sample of valid_samples) {
+                expect(LuckyCase.isDecapitalized(sample, true)).toEqual(false);
+                expect(!LuckyCase.isCapital(sample, true)).toEqual(false);
+            }
+        });
+        it(".isCapital invalid examples", function () {
+            const valid_samples = [
+                'capital',
+                'cAPITAL',
+                'ca-PItal',
+                'ca_pi_tal',
+                'ca pi-tal',
+                '_capital',
+                '____capital',
+            ]
+            for(let sample of valid_samples) {
+                expect(!LuckyCase.isCapital(sample, true)).toEqual(true);
+                expect(LuckyCase.isDecapitalized(sample, true)).toEqual(true);
+            }
         });
     });
 });

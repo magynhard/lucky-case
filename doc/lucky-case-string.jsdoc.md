@@ -38,6 +38,9 @@ LuckyCase version to add methods directly to string by monkey patching
     * [.capitalize(skip_prefixed_underscores)](#String+capitalize) &rarr; <code>string</code>
     * [.isCapital(skip_prefixed_underscores)](#String+isCapital) &rarr; <code>boolean</code>
     * [.isCapitalized(skip_prefixed_underscores)](#String+isCapitalized) &rarr; <code>boolean</code>
+    * [.decapitalize(skip_prefixed_underscores)](#String+decapitalize) &rarr; <code>string</code>
+    * [.isNotCapital(skip_prefixed_underscores)](#String+isNotCapital) &rarr; <code>boolean</code>
+    * [.isDecapitalized(skip_prefixed_underscores)](#String+isDecapitalized) &rarr; <code>boolean</code>
     * [.toMixedCase(preserve_prefixed_underscores)](#String+toMixedCase) &rarr; <code>string</code>
     * [.isMixedCase(allow_prefixed_underscores)](#String+isMixedCase) &rarr; <code>boolean</code>
     * [.swapCase(preserve_prefixed_underscores)](#String+swapCase) &rarr; <code>string</code>
@@ -75,10 +78,10 @@ Get types of cases of string (keys of LuckyCase.CASES)
 ### string.convertCase(case_type, preserve_prefixed_underscores) &rarr; <code>string</code>
 Convert a string into the given case type
 
-| Param | Type | Default |
-| --- | --- | --- |
-| case_type | <code>string</code> |  | 
-| preserve_prefixed_underscores | <code>boolean</code> | <code>true</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| case_type | <code>string</code> |  | can be UPPER_CASE or lower_case, e.g. 'SNAKE_CASE' or 'snake_case' |
+| preserve_prefixed_underscores | <code>boolean</code> | <code>true</code> |  |
 
 <a name="String+isValidCaseString"></a>
 
@@ -407,6 +410,33 @@ Check if the strings first character is a capital letter
 
 ### string.isCapitalized(skip_prefixed_underscores) &rarr; <code>boolean</code>
 Check if the strings first character is a capital letter
+
+| Param | Type | Default |
+| --- | --- | --- |
+| skip_prefixed_underscores | <code>boolean</code> | <code>false</code> | 
+
+<a name="String+decapitalize"></a>
+
+### string.decapitalize(skip_prefixed_underscores) &rarr; <code>string</code>
+Convert the first character to lower case
+
+| Param | Type | Default |
+| --- | --- | --- |
+| skip_prefixed_underscores | <code>boolean</code> | <code>false</code> | 
+
+<a name="String+isNotCapital"></a>
+
+### string.isNotCapital(skip_prefixed_underscores) &rarr; <code>boolean</code>
+Check if the strings first character is a lower letter
+
+| Param | Type | Default |
+| --- | --- | --- |
+| skip_prefixed_underscores | <code>boolean</code> | <code>false</code> | 
+
+<a name="String+isDecapitalized"></a>
+
+### string.isDecapitalized(skip_prefixed_underscores) &rarr; <code>boolean</code>
+Check if the strings first character is a lower letter
 
 | Param | Type | Default |
 | --- | --- | --- |

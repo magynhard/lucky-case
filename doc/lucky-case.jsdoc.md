@@ -41,6 +41,9 @@ Convert and detect various letter cases in strings
     * [.capitalize(string, skip_prefixed_underscores)](#LuckyCase.capitalize) &rarr; <code>string</code>
     * [.isCapital(string, skip_prefixed_underscores)](#LuckyCase.isCapital) &rarr; <code>boolean</code>
     * [.isCapitalized(string, skip_prefixed_underscores)](#LuckyCase.isCapitalized) &rarr; <code>boolean</code>
+    * [.decapitalize(string, skip_prefixed_underscores)](#LuckyCase.decapitalize) &rarr; <code>string</code>
+    * [.isNotCapital(string, skip_prefixed_underscores)](#LuckyCase.isNotCapital) &rarr; <code>boolean</code>
+    * [.isDecapitalized(string, skip_prefixed_underscores)](#LuckyCase.isDecapitalized) &rarr; <code>boolean</code>
     * [.toMixedCase(string, preserve_prefixed_underscores)](#LuckyCase.toMixedCase) &rarr; <code>string</code>
     * [.isMixedCase(string, allow_prefixed_underscores)](#LuckyCase.isMixedCase) &rarr; <code>boolean</code>
     * [.swapCase(string, preserve_prefixed_underscores)](#LuckyCase.swapCase) &rarr; <code>string</code>
@@ -88,7 +91,7 @@ Convert a string into the given case type
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | string | <code>string</code> |  | to convert |
-| case_type | <code>string</code> |  |  |
+| case_type | <code>string</code> |  | can be UPPER_CASE or lower_case, e.g. 'SNAKE_CASE' or 'snake_case' |
 | preserve_prefixed_underscores | <code>boolean</code> | <code>true</code> |  |
 
 <a name="LuckyCase.isValidCaseType"></a>
@@ -477,6 +480,36 @@ Check if the strings first character is a capital letter
 
 ### LuckyCase.isCapitalized(string, skip_prefixed_underscores) &rarr; <code>boolean</code>
 Check if the strings first character is a capital letter
+
+| Param | Type | Default |
+| --- | --- | --- |
+| string | <code>string</code> |  | 
+| skip_prefixed_underscores | <code>boolean</code> | <code>false</code> | 
+
+<a name="LuckyCase.decapitalize"></a>
+
+### LuckyCase.decapitalize(string, skip_prefixed_underscores) &rarr; <code>string</code>
+Convert the first character to lower case
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| string | <code>string</code> |  | to convert |
+| skip_prefixed_underscores | <code>boolean</code> | <code>false</code> |  |
+
+<a name="LuckyCase.isNotCapital"></a>
+
+### LuckyCase.isNotCapital(string, skip_prefixed_underscores) &rarr; <code>boolean</code>
+Check if the strings first character is a lower case letter
+
+| Param | Type | Default |
+| --- | --- | --- |
+| string | <code>string</code> |  | 
+| skip_prefixed_underscores | <code>boolean</code> | <code>false</code> | 
+
+<a name="LuckyCase.isDecapitalized"></a>
+
+### LuckyCase.isDecapitalized(string, skip_prefixed_underscores) &rarr; <code>boolean</code>
+Check if the strings first character is a lower case letter
 
 | Param | Type | Default |
 | --- | --- | --- |
