@@ -1,5 +1,9 @@
 # lucky-case
-[![NPM version](https://badge.fury.io/js/lucky-case.svg)](http://badge.fury.io/js/lucky-case)
+[![Gem](https://img.shields.io/npm/v/lucky-case?color=default&style=plastic&logo=npm)](https://www.npmjs.com/package/lucky-case)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/magynhard/lucky-case?color=default&label=browser&logo=javascript&style=plastic)](https://github.com/magynhard/lucky-case/releases)
+![Gem](https://img.shields.io/npm/dt/lucky-case?color=blue&style=plastic)
+[![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg?style=plastic&logo=mit)](LICENSE)
+
 > The lucky javascript library to identify and convert strings from any letter case to another. Plus some extra functions.
 
 It's a port of my ruby gem [lucky_case](https://github.com/magynhard/lucky_case).
