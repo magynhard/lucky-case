@@ -1,6 +1,6 @@
 # lucky-case
-
-The lucky javascript library to identify and convert strings from any letter case to another. Plus some extra functions.
+[![NPM version](https://badge.fury.io/js/lucky-case.svg)](http://badge.fury.io/js/lucky-case)
+> The lucky javascript library to identify and convert strings from any letter case to another. Plus some extra functions.
 
 It's a port of my ruby gem [lucky_case](https://github.com/magynhard/lucky_case).
 
