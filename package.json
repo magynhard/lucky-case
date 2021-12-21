@@ -4,7 +4,8 @@
   "description": "The lucky javascript library to identify and convert strings from any letter case to another",
   "exports": {
     ".": "./src/lucky-case/lucky-case.js",
-    "./": "./src/lucky-case/"
+    "./": "./src/lucky-case/",
+    "./string": "./src/lucky-case/string.js"
   },
   "main": "src/lucky-case/lucky-case.js",
   "scripts": {
