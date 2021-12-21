@@ -11,7 +11,8 @@
   "scripts": {
     "test": "jasmine",
     "build": "node scripts/build.js",
-    "doc": "node scripts/doc.js"
+    "doc": "node scripts/doc.js",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
