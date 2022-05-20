@@ -11,8 +11,7 @@
   "scripts": {
     "test": "jasmine",
     "build": "node scripts/build.js",
-    "doc": "node scripts/doc.js",
-    "publish": "npm publish"
+    "doc": "node scripts/doc.js"
   },
   "files": [
     "dist/lucky-case.js",
