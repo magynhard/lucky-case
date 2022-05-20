@@ -6,6 +6,7 @@ LuckyCase
 Convert and detect various letter cases in strings
 
 * [LuckyCase](#LuckyCase)
+    * [.getVersion()](#LuckyCase.getVersion) &rarr; <code>string</code>
     * [.case(string, allow_prefixed_underscores)](#LuckyCase.case) &rarr; <code>string</code> \| <code>null</code>
     * [.cases(string, allow_prefixed_underscores)](#LuckyCase.cases) &rarr; <code>Array.&lt;string&gt;</code> \| <code>null</code>
     * [.convertCase(string, case_type, preserve_prefixed_underscores)](#LuckyCase.convertCase) &rarr; <code>string</code>
@@ -53,6 +54,10 @@ Convert and detect various letter cases in strings
     * [.getUnderscoresAtStart(string)](#LuckyCase.getUnderscoresAtStart) &rarr; <code>string</code>
     * [.splitCaseString(string)](#LuckyCase.splitCaseString) &rarr; <code>Array.&lt;string&gt;</code>
 
+<a name="LuckyCase.getVersion"></a>
+
+### LuckyCase.getVersion() &rarr; <code>string</code>
+Get the version of the used library
 <a name="LuckyCase.case"></a>
 
 ### LuckyCase.case(string, allow_prefixed_underscores) &rarr; <code>string</code> \| <code>null</code>
