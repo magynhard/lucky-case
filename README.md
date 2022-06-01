@@ -13,6 +13,12 @@ Useful when working with conventions, where class names, method names and file n
 * Converters: Only characters, numbers, dashes and underlines are allowed inside a string.
 * Must not start with dash or number, underlines at the beginning are allowed by default and can be allowed/removed/controlled by parameter (when used for private methods for example)
 
+### Support for UTF-8 / Unicode
+As JavaScript has no unicode regular expression support like Ruby, UTF-8/Unicode-Ranges for non-latin letters have been included,
+to ensure proper case detection.
+
+This functionality has not been extensively tested and is therefore experimental in nature.
+
 # Contents
 
 * [Usage](#usage)
