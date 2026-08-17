@@ -1467,6 +1467,19 @@ describe('LuckyCase.isValidCaseType', function () {
 
 //----------------------------------------------------------------------------------------------------
 
+describe('LuckyCase._isCaseMatch', function () {
+    it('rejects inherited format names without modifying Object.prototype', function () {
+        const descriptor = Object.getOwnPropertyDescriptor(Object.prototype, 'lastIndex');
+
+        expect(() => {
+            LuckyCase._isCaseMatch('string', '__proto__');
+        }).toThrowError(InvalidCaseError);
+        expect(Object.getOwnPropertyDescriptor(Object.prototype, 'lastIndex')).toEqual(descriptor);
+    });
+});
+
+//----------------------------------------------------------------------------------------------------
+
 describe('LuckyCase.isValidCaseString', function () {
     beforeEach(function () {
     });

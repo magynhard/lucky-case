@@ -1005,7 +1005,7 @@ class LuckyCase {
             const regex = self.CASES[case_type];
             regex.lastIndex = 0; // reset state
             return self.CASES[case_type].test(string);
-        } else if(self.FORMATS[case_type]) {
+        } else if(Object.keys(self.FORMATS).includes(case_type)) {
             const regex = self.FORMATS[case_type];
             regex.lastIndex = 0;
             return self.FORMATS[case_type].test(string);
